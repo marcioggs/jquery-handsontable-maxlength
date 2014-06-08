@@ -16,4 +16,4 @@ $("#sheetId").handsontable({
  });
 ```
 
- Download original plugin at handsontable.com.
+ Download original plugin at <handsontable.com>.
