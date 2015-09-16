@@ -2,7 +2,7 @@ Handsontable max length plugin
 ==============================
 
 Limit the max length of any cell of the Handsontable plugin. 
-Latest test on Handsontable version 0.14.1.
+Latest test on Handsontable version 0.18.0.
 
 Usage:
 ------
@@ -19,6 +19,6 @@ $("#sheetId").handsontable({
 
 JSFiddle Test:
 --------------
-http://jsfiddle.net/x0zz28fb/4/
+http://jsfiddle.net/jnsar1zy/
 
  Download original plugin at <http://handsontable.com>.
