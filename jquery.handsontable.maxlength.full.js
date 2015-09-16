@@ -36,7 +36,7 @@
 		});
 	};
 
-	Handsontable.PluginHooks.add("afterGetCellMeta", function(row, col, cellProperties) {
+	(Handsontable.hooks || Handsontable.PluginHooks).add("afterGetCellMeta", function(row, col, cellProperties) {
 		if (typeof cellProperties.maxLength === "number") {
 			_addMaxLengthTextArea($(".handsontableInput"), cellProperties.maxLength);
 		}
