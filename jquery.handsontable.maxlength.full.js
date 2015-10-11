@@ -1,5 +1,5 @@
 /**
- * Handsontable max length plugin 2.0.0
+ * Handsontable max length plugin 2.0.1
  * Limit the max length of any cell of the Handsontable plugin.
  *
  * Márcio Gabriel
@@ -16,12 +16,18 @@
  */
 Handsontable.hooks.add('beforeChange', function(changes, source) {
 
-	var meta = this.getCellMeta(changes[0][0], changes[0][1]);
-	var text = changes[0][3];
+	for (i = 0; i < changes.length; i++) { //Iteration on all changed cells.
 
-	if (typeof meta.maxLength == "number" &&
-			text.length > meta.maxLength) {
-				
-		changes[0][3] = text.substring(0, meta.maxLength);
+		var row = changes[i][0]; //0 is the changed cell row index.
+		var col = changes[i][1]; //1 is the changed cell column index.
+		var meta = this.getCellMeta(row, col);
+		var data = changes[i][3]; //3 is the changed data index.
+
+		if (typeof meta.maxLength == "number" && //maxLength setted by the caller code.
+				data.length > meta.maxLength) {
+
+			changes[i][3] = data.substring(0, meta.maxLength); //Change the data with the collapsed text.
+		}
 	}
+
 });
